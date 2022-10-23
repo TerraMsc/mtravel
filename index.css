@@ -11,22 +11,17 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     box-sizing: border-box;
 }
 
 #wrap {
-    height: 736px;
+    height: 100vh;
     max-width: 414px;
+    max-height: 848px;
     width: 100%;
     background-color: white;
-    border-radius: 5px;
-    margin-bottom: 48px;
-    background-image: url('bg.png');
-    background-size: cover;
-    position: relative;
-    
-    overflow: hidden;
+    background-image: url('img/page1.png');
 }
 
 #head {
