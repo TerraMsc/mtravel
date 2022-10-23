@@ -22,7 +22,7 @@ body {
     width: 100%;
     background-color: white;
     background-image: url('img/page1.png');
-    background-size: contain;
+    background-size: cover;
 }
 
 #head {
