@@ -12,9 +12,7 @@ const now = new Date();
 now.setMinutes(now.getMinutes());
 
 minutes = ('0' + now.getMinutes()).slice(-2)
-
 hours = ('0' + now.getHours()).slice(-2)
-
 seconds = ('0' + now.getSeconds()).slice(-2)
 
 const current = hours + ':' + minutes;
@@ -31,14 +29,11 @@ hoursPast = ('0' + past.getHours()).slice(-2)
 secondsPast = ('0' + past.getSeconds()).slice(-2)
 
 pastTime = dd + '.' + mm + '.' + yyyy + 'r.' + " " + hoursPast + ':' + minutesPast;
-
 pastTimeSeconds = dd + '.' + mm + '.' + yyyy + 'r.' + " " + hoursPast + ':' + minutesPast + ':' + secondsPast;
 
 const currentSeconds = hoursPast + ':' + minutesPast + ':' + secondsPast
-
-console.log(pastTimeSeconds)
-
 document.getElementById("time").innerHTML = hours + ":" + minutesPast;
+console.log(pastTimeSeconds)
 
 var start = new Date(now - 6 * MS_PER_MINUTE);
 
@@ -50,6 +45,9 @@ function trackTime()
     var minutes = Math.floor(elapsed / 60000);
     var seconds = ((elapsed % 60000) / 1000).toFixed(0);
 
+    var nowtime = new Date();
+    var nowminutes = nowtime.getMinutes()
+
     if (minutes < 1) {
         var track = seconds + "s temu"
         document.getElementById("time-passed").innerHTML = track;
@@ -58,8 +56,10 @@ function trackTime()
         document.getElementById("time-passed").innerHTML = track;
     }
 
-    document.getElementById("date").innerHTML = pastTime;
-    
+    document.getElementById("date").innerHTML = dd + '.' + mm + '.' + yyyy + " " + hours + ':' + nowminutes;
+    document.getElementById("purchase-time-24h").innerHTML = hours + ":" + minutesPast + ":" + secondsPast;
+    document.getElementById("purchase-time-date").innerHTML = dd + '.' + mm + '.' + yyyy;
+
 }
 
 setInterval(trackTime, 1000);
